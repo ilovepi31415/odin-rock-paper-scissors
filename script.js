@@ -13,7 +13,12 @@ function getComputerChoice() {
 
 // Get human choice
 function getHumanChoice() {
-
+    let choice = prompt('Choose either "Rock", "Paper", or "Scissors"');
+    if (choice == 'Rock' || choice == 'Paper' || choice == 'Scissors') {
+        return choice;
+    }
+    alert('Invalid input');
+    getHumanChoice();
 }
 
 // Figure out who wins
