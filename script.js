@@ -1,7 +1,16 @@
+// Play round
+function playRound() {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    displayWinner(computerChoice, humanChoice);
+}
+
 // Get computer choice
 function getComputerChoice() {
-
+    choices = ['Rock', 'Paper', 'Scissors'];
+    return choices[Math.floor(Math.random() * 3)];
 }
+
 // Get human choice
 function getHumanChoice() {
 
@@ -12,9 +21,9 @@ function displayWinner(computer, human) {
 
 }
 
-// While playing (5 rounds)
+// Play game
+let computerScore = 0;
+let humanScore = 0;
 for (i = 0; i < 5; i++) {
-    computerChoice = getComputerChoice();
-    humanChoice = getHumanChoice();
-    winner = displayWinner(computerChoice, humanChoice);
+    playRound();
 }
