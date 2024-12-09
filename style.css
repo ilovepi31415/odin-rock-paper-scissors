@@ -20,6 +20,14 @@ body {
     padding: 32px;
 }
 
+button {
+    width: 72px;
+    height: 32px;
+    background-color: #E5B386;
+    border: 3px solid #494947;
+    border-radius: 5px;
+}
+
 #score {
     font-weight: bolder;
     font-size: 48px;
