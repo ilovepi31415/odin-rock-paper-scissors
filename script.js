@@ -5,6 +5,7 @@ const playerScoreboard = document.querySelector('#player-score');
 const computerScoreboard = document.querySelector('#computer-score');
 const matchupText = document.querySelector('#matchup');
 const resultText = document.querySelector('#result');
+const gamesToWin = 5;
 let computerScore = 0;
 let playerScore = 0;
 let catScore = 0;
@@ -69,4 +70,13 @@ function displayWinner(computer, human) {
     }
     playerScoreboard.textContent = playerScore;
     computerScoreboard.textContent = computerScore;
+    if (playerScore == gamesToWin || computerScore == gamesToWin) {
+        endGame();
+    }
+}
+
+function endGame() {
+    bRock.disabled = true;
+    bPaper.disabled = true;
+    bScissors.disabled = true;
 }
