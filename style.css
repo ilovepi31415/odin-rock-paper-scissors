@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     justify-self: center;
     align-items: center;
+    gap: 4px;
     background-color: #F5C396;
     border: 8px solid #494947;
     border-radius: 24px;
@@ -30,4 +31,8 @@ body {
 
 #computer-score {
     color: #D7263D;
+}
+
+#matchup {
+    margin-top: 8px;
 }

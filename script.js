@@ -3,6 +3,8 @@ const bPaper = document.querySelector('#paper');
 const bScissors = document.querySelector('#scissors');
 const playerScoreboard = document.querySelector('#player-score');
 const computerScoreboard = document.querySelector('#computer-score');
+const matchupText = document.querySelector('#matchup');
+const resultText = document.querySelector('#result');
 let computerScore = 0;
 let playerScore = 0;
 let catScore = 0;
@@ -51,22 +53,20 @@ function getHumanChoice() {
 // Figure out who wins
 function displayWinner(computer, human) {
     choices = ['Rock', 'Paper', 'Scissors'];
-    console.log(`Your choice: ${choices[human]}`);
-    console.log(`Computer choice: ${choices[computer]}`);
+    matchupText.textContent = `${choices[human]} vs ${choices[computer]}`;
     diff = (human - computer + 3) % 3;
     if (diff == 0) {
         catScore++;
-        console.log("You tied.");
+        resultText.textContent = "You tie.";
     }
     else if (diff == 1) {
         playerScore++;
-        console.log("You win!");
+        resultText.textContent = "You win!";
     }
     else {
         computerScore++;
-        console.log("You lose...")
+        resultText.textContent = "You lose...";
     }
     playerScoreboard.textContent = playerScore;
     computerScoreboard.textContent = computerScore;
-    console.log(`${playerScore}-${computerScore}-${catScore}`);
 }
