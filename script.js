@@ -1,8 +1,11 @@
 const bRock = document.querySelector('#rock');
 const bPaper = document.querySelector('#paper');
 const bScissors = document.querySelector('#scissors');
+const playerScoreboard = document.querySelector('#player-score');
+const computerScoreboard = document.querySelector('#computer-score');
 let computerScore = 0;
-let humanScore = 0;
+let playerScore = 0;
+let catScore = 0;
 
 bRock.addEventListener('click', () => {
     playRound(0);
@@ -52,16 +55,18 @@ function displayWinner(computer, human) {
     console.log(`Computer choice: ${choices[computer]}`);
     diff = (human - computer + 3) % 3;
     if (diff == 0) {
+        catScore++;
         console.log("You tied.");
     }
     else if (diff == 1) {
-        humanScore++;
+        playerScore++;
         console.log("You win!");
     }
     else {
         computerScore++;
         console.log("You lose...")
     }
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer Score: ${computerScore}`)
+    playerScoreboard.textContent = playerScore;
+    computerScoreboard.textContent = computerScore;
+    console.log(`${playerScore}-${computerScore}-${catScore}`);
 }
