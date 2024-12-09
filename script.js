@@ -1,7 +1,25 @@
+const bRock = document.querySelector('#rock');
+const bPaper = document.querySelector('#paper');
+const bScissors = document.querySelector('#scissors');
+let computerScore = 0;
+let humanScore = 0;
+
+bRock.addEventListener('click', () => {
+    playRound(0);
+});
+
+bPaper.addEventListener('click', () => {
+    playRound(1);
+});
+
+bScissors.addEventListener('click', () => {
+    playRound(2);
+});
+
 // Play round
-function playRound() {
+function playRound(humanChoice) {
     let computerChoice = getComputerChoice();
-    let humanChoice = getHumanChoice();
+    // let humanChoice = getHumanChoice();
     displayWinner(computerChoice, humanChoice);
 }
 
@@ -46,11 +64,4 @@ function displayWinner(computer, human) {
     }
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer Score: ${computerScore}`)
-}
-
-// Play game
-let computerScore = 0;
-let humanScore = 0;
-for (i = 0; i < 5; i++) {
-    playRound();
 }
